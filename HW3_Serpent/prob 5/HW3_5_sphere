@@ -1,0 +1,71 @@
+set title "Pu sphere"
+
+% --- surface definition
+surf  1  sph 0.0 0.0 0.0 6.38493
+surf  2  sph 0.0 0.0 0.0 6.39763
+
+%---- cell <name> <u0> <mat> <surf 1> <surf 2> ...
+cell  1  0  Pu -1
+cell  2  0  Ni 1 -2
+cell  3  0 outside 2
+
+% --- Materials
+mat  Pu  sum 
+ 94239.09c  3.7047e-2
+ 94240.09c  1.751e-3
+ 94241.09c  1.17e-4
+
+mat Ni 9.1322e-2
+ 28058.09c 1
+
+mat Gd 1.375e-3
+ 62152.09c 1 
+
+
+% --- Cross section library file path
+
+set acelib "/usr/local/serpent/xsdata/endfb7/sss_endfb7u.xsdata"
+
+% --- black Boundary condition-default
+
+% --- Neutron population and criticality cycles: set pop <npop> <cycles> <skip> [<keff0> <int>]
+
+set pop 1000 250 50 1.00
+
+% --- Geometry and Mesh Plot
+
+plot 3 500 500
+mesh 3 500 500
+
+%--- Detector
+
+%average flux in material Pu:  det <name> dr <mt> <mat>
+det 1 dm Pu
+
+%absorption and fission rates in fuel
+det 4  dr -2 Pu
+det 5  dr -6 Pu
+
+
+%--- define 20 energy groups
+ene 1 4 cas23
+%neutron flux spectra in fuel with 20 energy groups
+det 6 de 1 dm Pu 
+
+ene 2 4 cas2
+det 7 de 2 dm Pu 
+
+%---2 energy groups-default
+%--spatial distribution of two-group flux along the central line of the fuel sphere
+%add concentric spherical zones in the fuel region
+
+det 12
+dm Pu
+de 2
+dx -0.63 0.63 30
+
+
+
+
+
+

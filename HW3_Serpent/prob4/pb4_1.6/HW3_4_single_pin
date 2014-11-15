@@ -1,0 +1,63 @@
+set title "PWR single pin"
+
+% --- Fuel pin
+pin 10
+fuel  0.410
+void 0.420
+clad 0.480
+water
+
+% --- surface definition
+surf  1  cyl  0.0 0.0 0.48
+surf 10 pz 200.0
+surf 20 pz -200.0
+surf 2 sqc 0.00 0.00 0.80 
+
+%---- cell <name> <u0> <mat> <surf 1> <surf 2> ...
+cell  1  0  fill 10     -2  -10 20   
+cell  3  0  outside     2
+cell  4  0  outside     10 -2
+cell  5  0  outside     -20 -2
+
+% --- Materials
+% UO2 5 at% enriched
+mat  fuel  -10.41 burn 1 tmp 1100
+ 92235.09c  0.05
+ 92238.09c  0.95
+  8016.09c  2.00
+
+mat clad -6.56
+ 40000.06c  1.0
+
+mat water -0.70  moder lwtr 1001
+  1001.06c     2.
+  8016.06c     1.
+
+therm lwtr lwe7.12t
+
+mat U235 1.0 92235.09c 1.0
+mat U238 1.0 92238.09c 1.0
+
+% --- Cross section library file path
+
+set acelib "/usr/local/serpent/xsdata/endfb7/sss_endfb7u.xsdata"
+
+% --- reflective Boundary condition
+
+set bc 2
+
+% --- Neutron population and criticality cycles: set pop <npop> <cycles> <skip> [<keff0> <int>]
+
+set pop 1000 250 50 1.00
+
+% --- Geometry and Mesh Plot
+
+plot 3 500 500
+mesh 3 500 500
+
+
+
+
+
+
+

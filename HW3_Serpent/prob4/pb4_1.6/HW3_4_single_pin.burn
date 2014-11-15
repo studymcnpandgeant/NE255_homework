@@ -1,0 +1,67 @@
+
+% ==============================================================================
+
+% Transmutation cross section and decay data file
+
+% Created by Serpent v. 1.1.19
+
+% Date: Sun Oct 26 20:52:20 2014
+% Title: 'PWR single pin'
+% 50 inactive and 250 active cycles of 1000 neutrons
+
+% 1 burnable materials
+% Decay data not included
+% Fission yield data not included
+
+% ==============================================================================
+
+% Material 1/1 ('fuelp10r1')
+
+% ==============================================================================
+
+% Transmutation cross sections:
+%
+% Column 1     : nuclide name
+% Column 2     : nuclide ZA
+% Column 3     : nuclide I
+% Column 4     : atomic weight
+% Column 5     : atomic fraction
+% Column 6     : mass fraction
+% Column 7     : number of reaction modes
+% Column 8 ... : list of reaction modes
+%
+% Four entries for each reaction mode:
+%
+% Entry 1      : reaction type
+% Entry 2      : product nuclide isomeric state
+% Entry 3      : one-group cross section (in barn)
+% Entry 4      : relative statistical error
+%
+% Reaction modes (ENDF reaction MT's):
+%
+% Mode 16      : (n,2n)
+% Mode 17      : (n,3n)
+% Mode 18      : total fission
+% Mode 102     : (n,gamma)
+% Mode 103     : (n,p)
+% Mode 104     : (n,d)
+% Mode 105     : (n,t)
+% Mode 106     : (n,He-3)
+% Mode 107     : (n,alpha)
+
+MAT    fuelp10r1
+ADENS  6.96833E-02
+MDENS  1.04100E+01
+VOL    5.28102E-01
+FLUX   8.92347E+00 0.00150
+PDE    3.73605E-11 0.00073
+FDENS  1.15333E+00 0.00073
+
+XS 3
+
+ 92235.09c  92235 0  235.04395   1.66667E-02   4.35444E-02  3   18 0 5.67941E+01 0.00000   16 0 4.20243E-03 0.00000  102 0 1.19693E+01 0.00000  
+ 92238.09c  92238 0  238.05078   3.16667E-01   8.37927E-01  4   18 0 1.05266E-01 0.00000   16 0 5.26330E-03 0.00000   17 0 2.61611E-05 0.00000  102 0 9.70788E-01 0.00000  
+  8016.09c   8016 0   15.99492   6.66667E-01   1.18529E-01  3  102 0 2.00227E-05 0.00000  103 0 1.21511E-05 0.00000  107 0 2.75186E-03 0.00000  
+
+% ==============================================================================
+

@@ -1,0 +1,100 @@
+set title "PWR single pin"
+
+% --- Fuel pin
+pin 10
+fuel  0.410
+void 0.420
+clad 0.480
+water
+
+% --- surface definition
+surf  1  cyl  0.0 0.0 0.48
+surf 10 pz 200.0
+surf 20 pz -200.0
+surf 5 px 0.63
+surf 6 px -0.63
+surf 7 py 0.63
+surf 8 py -0.63
+
+%---- cell <name> <u0> <mat> <surf 1> <surf 2> ...
+cell  1  0  fill 10        -1
+cell  2  0  water       1 -5 6 -7 8 -10 20   
+
+% --- Materials
+
+% UO2 5 at% enriched
+mat  fuel  -10.45 burn 1 tmp 1100
+ 92235.09c  0.05
+ 92238.09c  0.95
+  8016.09c  2.00
+
+mat clad -6.56
+ 40000.06c  1.0
+
+mat water -0.72 moder lwtr 1001
+  1001.06c     2.
+  8016.06c     1.
+
+therm lwtr lwe7.12t
+
+mat U235 1.0 92235.09c 1.0
+mat U238 1.0 92238.09c 1.0
+
+% --- Cross section library file path
+
+set acelib "/usr/local/serpent/xsdata/endfb7/sss_endfb7u.xsdata"
+
+% --- reflective Boundary condition
+
+set bc 2
+
+% --- Neutron population and criticality cycles: set pop <npop> <cycles> <skip> [<keff0> <int>]
+
+set pop 1000 250 50 1.00
+
+% --- Geometry and Mesh Plot
+
+plot 3 500 500
+mesh 3 500 500
+
+%--- Detector
+
+%average flux in material fuel:  det <name> dr <mt> <mat>
+det 1 dr 0 fuel
+
+%average flux in clad
+det 1 dr 0 clad
+
+%average flux in moderator
+det 1 dm water dr 0 water
+
+%absorption and fission rates in fuel
+det 4 dm fuel dr -2 fuel
+det 5 dm fuel dr -6 fuel
+
+%--- define 23 energy groups
+det 6 de cas23
+%neutron flux spectra in fuel with 20 energy groups
+det 7 de cas23 dt -2 dm fuel dr 0 fuel
+%neutron flux spectra in water with 20 energy groups
+det 8 de cas23 dt -2 dm water dr 0 water
+
+%---define 2 energy groups
+det 9 de cas2
+%neutron flux spectra in fuel with 20 energy groups
+det 10 de cas2 dt -2 dm fuel dr 0 fuel
+%neutron flux spectra in water with 20 energy groups
+det 11 de cas2 dt -2 dm water dr 0 water
+
+%--spatial distribution of two-group flux along the central line of the fuel pin
+%add cylindrical zones in the fuel region
+%add more zones in the water region
+det 12
+de cas2
+dx -0.63 0.63 30
+
+
+
+
+
+

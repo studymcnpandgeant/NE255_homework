@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1415842196 "HW4.tex" "HW4.pdf" "HW4" 1415842197
+["pdflatex"] 1416360913 "template.tex" "template.pdf" "template" 1416360914
   "/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii" 1337017135 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/local/texlive/2014/texmf-dist/tex/generic/babel-english/english.ldf" 1367878877 6963 2e0cb3d93aa64508bdb0db58ae900d97 ""
   "/usr/local/texlive/2014/texmf-dist/tex/generic/babel/babel.def" 1395780385 49536 e1475dd245ff2196764ba5b91ac63714 ""
@@ -29,6 +29,9 @@
   "/usr/local/texlive/2014/texmf-dist/tex/latex/base/ts1cmr.fd" 1399675188 2005 93bd6bd567069079fb8ff3cfd3ec04bb ""
   "/usr/local/texlive/2014/texmf-dist/tex/latex/base/ts1enc.def" 1399675188 7555 e1df58a0e9b617dc46ac9dd0ca2a0fbb ""
   "/usr/local/texlive/2014/texmf-dist/tex/latex/booktabs/booktabs.sty" 1211777752 6375 989ecfb545a13610facc71ae7e40ced1 ""
+  "/usr/local/texlive/2014/texmf-dist/tex/latex/caption/caption.sty" 1368312746 65148 c61accbd2b9a5316d9be0887ec48d722 ""
+  "/usr/local/texlive/2014/texmf-dist/tex/latex/caption/caption3.sty" 1368312746 62748 b02c0dc118f5f35146d37cec569e83b1 ""
+  "/usr/local/texlive/2014/texmf-dist/tex/latex/caption/subcaption.sty" 1360019375 4351 ee16013c18d101f9ecb20e53efde17b4 ""
   "/usr/local/texlive/2014/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty" 1160175134 20521 e5d13d98d57bd53d4fed3aa61bd29c86 ""
   "/usr/local/texlive/2014/texmf-dist/tex/latex/fourier/fmlfutm.fd" 1137110168 640 e9faa3c895b5b0d2cc1c1f7ae5b1e92b ""
   "/usr/local/texlive/2014/texmf-dist/tex/latex/fourier/fmlfutmi.fd" 1137110168 656 ae28e6211f6ec967acab0e84e89d4157 ""
@@ -49,9 +52,11 @@
   "/usr/local/texlive/2014/texmf-dist/tex/latex/parskip/parskip.sty" 1285887441 2763 02a40cc5a32805c41d919cfbdba7e99a ""
   "/usr/local/texlive/2014/texmf-dist/tex/latex/pdftex-def/pdftex.def" 1306616590 55368 3c8a0d99822330f2dfabc0dfb09ce897 ""
   "/usr/local/texlive/2014/texmf-dist/tex/latex/sectsty/sectsty.sty" 1137110779 22423 d476012cd03f82f9475ad54ba6cd3267 ""
-  "HW4.aux" 1415842197 660 e803060b37a8bcb4cecde7c4fb6e0161 ""
-  "HW4.tex" 1415842183 6599 a61fbf96e7ac5a36f7b1b2781b2d18fc ""
+  "template.aux" 1416360914 551 ceedf1190a4f6161f486ad6e13364b6e ""
+  "template.tex" 1416360913 4614 03f4644d981702d8c52b7f034f65530f ""
+  "template.toc" 1416360914 27 38d9a29c5049abebc1d57bbc064a3bf3 ""
   (generated)
-  "HW4.pdf"
-  "HW4.aux"
-  "HW4.log"
+  "template.toc"
+  "template.log"
+  "template.aux"
+  "template.pdf"
